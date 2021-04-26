@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/student', 'StudentController@index')->name('student');
+Route::get('/student/create', 'StudentController@create')->name('student-create');
+Route::post('/student', 'StudentController@store')->name('student-store');
+Route::get('/student/detail/{id}', 'StudentController@show')->name('student-show');
